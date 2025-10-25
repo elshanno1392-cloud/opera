@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اپرا - پروژه آموزشی</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Tahoma", "Arial", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            direction: rtl;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .message {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1em;
+        }
+        
+        .url-box {
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #667eea; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #764ba2; }
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎭 اپرا</h1>
+        <h2>پروژه آموزشی طراحی وب</h2>
+        
+        <div class="message">
+            <span class="emoji">🎉</span>
+            به پروژه آموزشی اپرا خوش آمدید!
+            <span class="emoji">🚀</span>
+        </div>
+        
+        <div class="features">
+            <div class="feature">HTML</div>
+            <div class="feature">CSS</div>
+            <div class="feature">JavaScript</div>
+            <div class="feature">GitHub</div>
+        </div>
+        
+        <div class="url-box" id="urlDisplay">
+            آدرس پروژه: در حال تنظیم...
+        </div>
+        
+        <div class="message">
+            این پروژه برای آموزش مفاهیم پایه طراحی وب ایجاد شده است
+            <span class="emoji">💻</span>
+        </div>
+    </div>
+
+    <script>
+        // نمایش آدرس فعلی
+        document.getElementById('urlDisplay').textContent = 
+            'آدرس پروژه: ' + window.location.href;
+            
+        // افکت تعاملی
+        document.addEventListener('click', function() {
+            document.body.style.background = 
+                'linear-gradient(135deg, #' + 
+                Math.floor(Math.random()*16777215).toString(16) + 
+                ' 0%, #' + 
+                Math.floor(Math.random()*16777215).toString(16) + 
+                ' 100%)';
+        });
+    </script>
+</body>
+</html>
